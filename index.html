@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desocupado</title>
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #250317 40%, #28182e 100%);
+      color: #ececec;
+      margin: 0;
+      padding: 180px 0 0 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .avatar-container {
+      position: relative;
+      width: 360px;
+      height: 360px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      box-shadow: 0 0 48px #ffe549a6, 0 0 0 7px #f6e27852;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background: #191919;
+      object-fit: cover;
+    }
+    .orbit {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 400px; height: 400px;
+      margin-top: -200px; margin-left: -200px;
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .orbit.clockwise {
+      animation: spin 10s linear infinite;
+    }
+    .orbit.counter {
+      animation: spinReverse 15s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg);}
+      to   { transform: rotate(360deg);}
+    }
+    @keyframes spinReverse {
+      from { transform: rotate(0deg);}
+      to   { transform: rotate(-360deg);}
+    }
+    .planet-icon {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid #fff5;
+      box-shadow: 0 0 12px #0008;
+      background: #232323;
+      top: 50%;
+      left: 50%;
+      margin-top: -24px;
+      margin-left: -24px;
+      object-fit: cover;
+      pointer-events: auto;
+      cursor: default;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    /* Distâncias e ângulos personalizados */
+    .planet1  { --init-angle: 500deg;   --distance: 190px; }
+    .planet2  { --init-angle: 52deg;  --distance: 210px; }
+    .planet3  { --init-angle: 307deg; --distance: 220px; }
+    .planet4  { --init-angle: 156deg; --distance: 230px; }
+    .planet5  { --init-angle: 408deg; --distance: 235px; }
+    .planet6  { --init-angle: 260deg; --distance: 245px; }
+    .planet7  { --init-angle: 312deg; --distance: 250px; }
+
+    .planet-icon {
+      transform: rotate(var(--init-angle)) translate(var(--distance)) rotate(calc(-1 * var(--init-angle)));
+    }
+    .planet-icon:hover {
+      transform: scale(1.2) rotate(var(--init-angle)) translate(var(--distance)) rotate(calc(-1 * var(--init-angle)));
+      box-shadow: 0 0 20px #1de9b6;
+      z-index: 10;
+    }
+    h1 {
+      font-size: 3rem;
+      animation: colorShift 6s linear infinite alternate;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    @keyframes colorShift {
+      0% { color: #505050; }
+      20% { color: #000000; }
+      80% { color: #ffffff; }
+    }
+    p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      text-shadow: 8px 6px 3px rgba(0,0,0,0.20);
+    }
+    a {
+      color: #1de9b6;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      animation: linkGlow 3s ease-in-out infinite alternate;
+      margin-bottom: 10px;
+    }
+    @keyframes linkGlow {
+      0% { text-shadow: 0 0 10px #1de9b6; }
+      100% { text-shadow: 0 0 30px #00ffff; }
+    }
+    a:hover { color: #000000; }
+  </style>
+</head>
+<body>
+  <div class="avatar-container">
+    <img src="234992435.jpeg" alt="Avatar usuario" id="avatar" />
+    <div class="orbit counter">
+      <img src="ícons/React-icon.svg.png" class="planet-icon planet1" title="React" />
+      <img src="ícons/icons8-html5-48.png" class="planet-icon planet2" title="HTML5" />
+      <img src="ícons/css3-48.png" class="planet-icon planet3" title="CSS3" />
+    </div>
+    <div class="orbit clockwise">
+      <img src="ícons/s-48.png" class="planet-icon planet4" title="JavaScript" />
+      <img src="ícons/python-48.png" class="planet-icon planet5" title="Python" />
+      <img src="ícons/icons8-git-48.png" class="planet-icon planet6" title="Git" />
+      <img src="ícons/node.png" class="planet-icon planet7" title="NodeJS" />
+    </div>
+  </div>
+  <h1>Olá, eu sou Wanderson Silva!</h1>
+  <p>Sou alguém que nunca para de aprender, adoro mergulhar em novos desafios, buscar soluções criativas e estou sempre em movimento, evoluindo cada dia mais em tudo que faço.</p>
+  <p>Veja meus projetos no <a href="https://github.com/wandersonvsilva" target="_blank">GitHub</a> e conecte-se comigo!</p>
+</body>
+</html>
