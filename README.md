@@ -9,7 +9,7 @@ O site apresenta animações suaves, efeitos de digitação, design responsivo e
 
 ## 🔗 Demonstração ao Vivo
 Você pode visualizar o portfólio localmente abrindo `index.html` em um navegador moderno.  
-Ou acessar a demonstração online aqui: [Demonstração ao Vivo](https://wandersonvsilva.github.io/andinho.github.io/)
+Ou acessar a demonstração online aqui: [Demonstração ao Vivo](https://andinhoo24.github.io/wandersonvsilva/)
 
 ---
 
